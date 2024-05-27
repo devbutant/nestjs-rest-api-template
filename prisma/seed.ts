@@ -29,6 +29,17 @@ async function main() {
         });
     }
 
+    const typesArray = ["achat", "échange", "location", "service", "prêt"];
+    const categoriesArray = [
+        "mode",
+        "meubles",
+        "multimédia",
+        "véhicules",
+        "loisirs",
+        "animaux",
+        "divers",
+    ];
+
     for (const user of users) {
         const hashedPassword = await hashPassword(user.create.password);
 
@@ -47,45 +58,31 @@ async function main() {
         });
 
         for (const ad of ads) {
-            // const category = await prisma.category.findUnique({
-            //     where: { name: ad.category },
-            // });
+            const typeIdCreated = await prisma.type.findUnique({
+                where: {
+                    name: typesArray[
+                        Math.floor(Math.random() * typesArray.length)
+                    ],
+                },
+            });
 
-            // const type = await prisma.type.findUnique({
-            //     where: { name: ad.type },
-            // });
-
-            // Supprimer type et category de ad
-            // delete ad.category;
-            // delete ad.type;
-
-            console.log(ad);
-            ad.authorId = newUser.id;
+            const categoryIdCreated = await prisma.category.findUnique({
+                where: {
+                    name: categoriesArray[
+                        Math.floor(Math.random() * categoriesArray.length)
+                    ],
+                },
+            });
 
             await prisma.ad.create({
-                data: ad,
+                data: {
+                    ...ad,
+                    authorId: newUser.id,
+                    typeId: typeIdCreated.id,
+                    categoryId: categoryIdCreated.id,
+                },
             });
         }
-        // for (const ad of user.create.ads.create) {
-        //     console.log(ad);
-
-        //     const category = await prisma.category.findUnique({
-        //         where: { name: "ok" },
-        //     });
-
-        //     const type = await prisma.type.findUnique({
-        //         where: { name: "zee" },
-        //     });
-
-        //     await prisma.ad.create({
-        //         data: {
-        //             ...ad,
-        //             authorId: newUser.id,
-        //             categoryId: category.id,
-        //             typeId: type.id,
-        //         },
-        //     });
-        // }
     }
 }
 main()
