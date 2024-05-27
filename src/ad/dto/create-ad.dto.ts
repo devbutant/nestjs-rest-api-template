@@ -1,29 +1,46 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { IsString, MaxLength, MinLength } from "class-validator";
+import {
+    IsDate,
+    IsNumber,
+    IsString,
+    MaxLength,
+    MinLength,
+} from "class-validator";
 import { IsCuid } from "src/decorators/IsCUID";
 
 export class CreateAdDto {
-    @ApiProperty({
-        example: "Clavier MX Master 3",
-        required: true,
-    })
     @IsString()
     @MinLength(2)
     @MaxLength(30)
     title: string;
 
-    @ApiProperty({
-        example: "Un clavier ergonomique et silencieux",
-        required: false,
-    })
     @IsString()
     @MinLength(2)
     @MaxLength(200)
-    description?: string;
+    description: string;
 
     @IsString()
+    @MinLength(2)
+    @MaxLength(100)
+    address: string;
+
+    @IsNumber()
+    price: number;
+
     @IsCuid()
     authorId: string;
-
     author: { connect: { id: string } };
+
+    @IsCuid()
+    categoryId: string;
+    category: { connect: { id: string } };
+
+    @IsCuid()
+    typeId: string;
+    type: { connect: { id: string } };
+
+    @IsDate()
+    createdAt: Date;
+
+    @IsDate()
+    updatedAt: Date;
 }
