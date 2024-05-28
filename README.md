@@ -17,12 +17,12 @@ cd ineed-api
 
 ### 2. Install Dependencies
 
-Use the following command to install all necessary project dependencies:
+Use the following command to install all necessary project dependencies:  
 `npm ci`
 
 ### 3. Configure Environment Variables
 
-Copy the example .env file to create your own .env file:
+Copy the example .env file to create your own .env file:  
 `cp .env.example .env`
 Make sure to edit the .env file to include the correct values for your environment.
 
@@ -34,7 +34,7 @@ Use Prisma to reset and apply database migrations:
 
 ### 5. Start the Development Server
 
-Run the development server with the following command:
+Run the development server with the following command:  
 `npm run dev`
 
 The development server should now be running. You can access the application at _http://localhost:3000_.
