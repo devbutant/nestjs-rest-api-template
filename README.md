@@ -1,6 +1,6 @@
-# INEED - API
+# Welcome to the INEED API 👋
 
-Welcome to the INEED API ! INEED is a web application that allows users to post ads for various needs such as services, purchases, loans, rentals, and more.
+INEED is a web application that allows users to post ads for various needs such as services, purchases, loans, rentals, and more.
 
 ## Installation
 
