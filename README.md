@@ -1,21 +1,21 @@
-# Welcome to the INEED API 👋
+# NestJS API Template
 
-INEED is a web application that allows users to post ads for various needs such as services, purchases, loans, rentals, and more.
+This repository serves as a starting point for building APIs using NestJS, a progressive Node.js framework.
+To use this template, follow these steps:
 
-## Installation
+### 1. Create a New Repository:
 
-Follow these steps to install and configure the INEED API:
+Click on the `Use this template` button on this repository's GitHub page to create a new repository based on this template.
 
-### 1. Clone the Repository
+### 2. Clone the Repository:
 
-Start by cloning the INEED API repository from GitHub:
+Clone the repository you just created to your local machine using Git:
 
 ```bash
-git clone https://github.com/emmanuelniasse/ineed-api.git
-cd ineed-api
+git clone https://github.com/your-name/your-new-repository.git
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 
 Use the following command to install all necessary project dependencies:
 
@@ -23,7 +23,7 @@ Use the following command to install all necessary project dependencies:
 npm ci
 ```
 
-### 3. Configure Environment Variables
+### 4. Configure Environment Variables
 
 Copy the example .env file to create your own .env file:
 
@@ -33,7 +33,7 @@ cp .env.example .env
 
 Make sure to edit the .env file to include the correct values for your environment.
 
-### 4. Migrate the Database
+### 5. Migrate the Database
 
 Use Prisma to reset and apply database migrations:
 
@@ -41,7 +41,7 @@ Use Prisma to reset and apply database migrations:
 npx prisma migrate reset
 ```
 
-### 5. Start the Development Server
+### 6. Start the Development Server
 
 Run the development server with the following command:
 
@@ -49,4 +49,4 @@ Run the development server with the following command:
 npm run dev
 ```
 
-The development server should now be running. You can access the application at _http://localhost:3000_.
+The development server should now be running. You can access the application at _http://localhost:3001_.
