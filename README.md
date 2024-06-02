@@ -20,7 +20,7 @@ git clone https://github.com/your-name/your-new-repository.git
 Use the following command to install all necessary project dependencies:
 
 ```bash
-npm ci
+pnpm i
 ```
 
 ### 4. Configure Environment Variables
@@ -38,7 +38,7 @@ Make sure to edit the .env file to include the correct values for your environme
 Use Prisma to reset and apply database migrations:
 
 ```bash
-npx prisma migrate reset
+pnpx prisma migrate reset
 ```
 
 ### 6. Start the Development Server
@@ -46,7 +46,7 @@ npx prisma migrate reset
 Run the development server with the following command:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 The development server should now be running. You can access the application at _http://localhost:3001_.
