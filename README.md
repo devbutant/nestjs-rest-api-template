@@ -1,4 +1,4 @@
-# NestJS API Template
+# NestJS REST API Template
 
 This repository serves as a starting point for building APIs using NestJS, a progressive Node.js framework.
 To use this template, follow these steps:
